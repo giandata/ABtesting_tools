@@ -29,8 +29,10 @@ def render():
             cc = round(control_conversions/control_visitors*100, 2)
             tc = round(test_conversions/test_visitors*100, 2)
             conv_diff = round(tc - cc, 2)
-            conv_impr = round((conv_diff/control_conversions)*100, 1)
-            conv_change = round((conv_diff/test_conversions)*100, 1)
+            conv_diff_2 = round(cc - tc, 2)
+            conv_impr = round(((tc - cc)/cc)*100, 1)
+
+            conv_change = round(((cc - tc)/cc)*100, 1)
 
             if tc > cc:
                 st.write(
@@ -38,7 +40,7 @@ def render():
 
             if tc < cc:
                 st.write(
-                    f"The {conversion_rates.conversions(cc,tc)} group has higher conversion. It converts {( - conv_diff)} percentual points more, which is a  {conv_change} % change.")
+                    f"The {conversion_rates.conversions(cc,tc)} group has higher conversion. It converts {(conv_diff_2)} percentual points more, which is a  {conv_change} % change.")
 
             if tc == cc:
                 st.write(

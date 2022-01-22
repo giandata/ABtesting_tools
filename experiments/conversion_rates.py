@@ -5,3 +5,7 @@ def conversions(cc, tc):
         return "Control"
     elif tc == cc:
         return "Same"
+
+
+def z_score(alpha, std, beta):
+    pass

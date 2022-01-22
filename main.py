@@ -1,5 +1,5 @@
 import streamlit as st
-from views import conversion_rates
+from views import conversion_rates, sample_size
 
 
 with st.sidebar:
@@ -15,11 +15,12 @@ options = ["Sample size", "Test duration", "Conversion rates",
            "Statistical significance", "Z-score", "Bayesian AB test"]
 page = st.radio('Select a calculator', options)
 
+if page == "Sample size":
+
+    sample_size.render()
+
 if page == "Conversion rates":
 
     conversion_rates.render()
 
     # st.write('Tests for statistical significance are used to address the question: what is the probability that what we think is a relationship between two variables is really just a chance occurrence?')
-
-else:
-    st.info("Section work in progress")
