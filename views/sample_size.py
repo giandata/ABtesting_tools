@@ -9,6 +9,9 @@ def render():
 
     sample_form = st.form('Sample size calculator')
     sample_form.subheader("Experiment parameter settings")
+    baseline = round(sample_form.number_input(
+        label="Baseline conversion", min_value=0.1, value=20.0, step=0.01), 2)
+
     mde = round(sample_form.number_input(min_value=0.1, value=5.0, label="Minimum detectable effect %",
                                          step=0.1, help='The desired relevant difference between the rates you would like to discover'), 2)
     sign_level = sample_form.radio(label="Significance level",
