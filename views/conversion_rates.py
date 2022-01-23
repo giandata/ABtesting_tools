@@ -8,14 +8,14 @@ def render():
     conversion_form = st.form('conversion rate')
     conversion_form.subheader("Control group")
     control_visitors = conversion_form.number_input(
-        label='Visitors', min_value=1, step=1, key='control_vis', help='How many participants there are in the control group?')
+        label='Visitors', min_value=1, value=1000, step=1, key='control_vis', help='How many participants there are in the control group?')
     control_conversions = conversion_form.number_input(
-        label='Conversions', min_value=1, step=1, key='control_conv')
+        label='Conversions', min_value=1, value=100, step=1, key='control_conv')
     conversion_form.subheader("Test group")
     test_visitors = conversion_form.number_input(
-        label='Visitors', step=1, min_value=1, key='test_vis', help='How many participants there are in the test group?')
+        label='Visitors', step=1, min_value=1, value=1000, key='test_vis', help='How many participants there are in the test group?')
     test_conversions = conversion_form.number_input(
-        label='Conversions', step=1, min_value=1, key='test_conv')
+        label='Conversions', step=1, min_value=1, value=100, key='test_conv')
     submit = conversion_form.form_submit_button('Calculate')
 
     if submit:
