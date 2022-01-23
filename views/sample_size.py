@@ -1,16 +1,8 @@
 import streamlit as st
+from experiments import sample_size
 
 
 def render():
-
-    z_table_alpha = {"90": "1.645",
-                     "95": "1,96",
-                     "98": "2.326",
-                     "99": "2.576"}
-
-    z_table_beta = {"80": "0.84",
-                    "90": "1.28",
-                    "95": "1.645"}
 
     st.header('Calculate the sample size')
     st.write(
@@ -30,6 +22,10 @@ def render():
     submit = sample_form.form_submit_button('Calculate')
 
     if submit:
-        st.subheader("Sample size per variant needed: {}")
+
+        sample = sample_size.sample_size_calc(
+            sign_level, test_power, baseline, mde)
+
+        st.subheader(f"Sample size per variant needed: {sample}")
         st.info(
-            f"To observe at  least a {mde} % improvement with a {sign_level} % significance levels and a {test_power} % probability, the experiment will need a sample of ... ")
+            f"To observe at  least a {mde} % improvement with a {sign_level} % significance levels and a {test_power} % probability, the experiment will need a sample of  {sample} for each variant")
