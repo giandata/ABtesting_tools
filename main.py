@@ -12,7 +12,7 @@ st.title('AB Testing tools 🧪')
 
 
 options = ["Sample size", "Test duration", "Conversion rates",
-           "Statistical significance", "Z-score", "Bayesian AB test"]
+           "Statistical significance", "Bayesian AB test"]
 page = st.radio('Select a calculator', options)
 
 if page == "Sample size":
