@@ -40,6 +40,6 @@ def render():
 
         st.subheader(
             f"Adjusted sample with unequal groups size: {adjusted_sample}")
-        st.write(f"Control sample {sample_control} ")
-        st.write(f"Test sample {sample_test}")
-        st.write(f"Experiment group ratio {ratio} %")
+        st.markdown(f"Control sample: **{sample_control}** ")
+        st.markdown(f"Test sample: **{sample_test}**")
+        st.markdown(f"Test group ratio **{ratio}** %")
