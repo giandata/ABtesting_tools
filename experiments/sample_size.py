@@ -12,7 +12,7 @@ def sample_size_calc(alpha, beta, conversion_base, conversion_desired):
                     95: 1.645}
 
     c1 = conversion_base/100
-    c2 = c1 + (conversion_desired/100)
+    c2 = ((conversion_desired/100)*c1) + c1
 
     pool_variance = (c1 * (1 - c1)) + (c2 * (1 - c2))
 
