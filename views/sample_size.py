@@ -42,4 +42,4 @@ def render():
             f"Adjusted sample with unequal groups size: {adjusted_sample}")
         st.markdown(f"Control sample: **{sample_control}** ")
         st.markdown(f"Test sample: **{sample_test}**")
-        st.markdown(f"Test group ratio **{ratio}** %")
+        st.markdown(f"Test/control ratio **{ratio}** ")
